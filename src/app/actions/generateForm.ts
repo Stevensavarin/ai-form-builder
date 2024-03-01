@@ -53,7 +53,7 @@ export async function generateForm(
       }),
     });
     const json = await response.json();
-    console.log("openai response", json);
+    console.log("openai response", json); // Log the JSON response
 
     const responseObj = JSON.parse(json.choices[0].message.content);
 
@@ -70,7 +70,7 @@ export async function generateForm(
       data: { formId: dbFormId },
     };
   } catch (e) {
-    console.log(e);
+    console.error("Error:", e);
     return {
       message: "Failed to create form",
     };
