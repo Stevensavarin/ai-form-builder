@@ -53,7 +53,6 @@ export async function generateForm(
       }),
     });
     const json = await response.json();
-    console.log("openai response", json);
 
     const responseObj = JSON.parse(json.choices[0].message.content);
 
@@ -62,7 +61,6 @@ export async function generateForm(
       description: responseObj.description,
       questions: responseObj.questions,
     });
-    console.log("form id", dbFormId);
 
     revalidatePath("/");
     return {
