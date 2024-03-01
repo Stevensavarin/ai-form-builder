@@ -22,7 +22,7 @@ export default function AdminLayout({ children }: {
         href: "/results",
         icon: "list",
       },
-      {
+      /*{
         title: "Analytics",
         href: "/analytics",
         icon: "lineChart",
@@ -31,7 +31,7 @@ export default function AdminLayout({ children }: {
         title: "Charts",
         href: "/charts",
         icon: "pieChart",
-      },
+      },*/
       {
         title: "Settings",
         href: "/settings",
