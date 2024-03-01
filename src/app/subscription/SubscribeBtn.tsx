@@ -35,7 +35,7 @@ const SubscribeBtn = ({ userId, price }: Props) => {
   }
 
   return (
-    <button className='underline' onClick={() => handleCheckout(price="price_1Op6JEKsWV3lHfMkfsZ1JEmV")}>Upgrade your plan</button>
+    <button className='underline' onClick={() => handleCheckout(price)}>Upgrade your plan</button>
   )
 }
 
