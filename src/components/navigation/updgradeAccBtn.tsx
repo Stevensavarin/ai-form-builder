@@ -1,3 +1,5 @@
+
+
 import React from 'react'
 import Link from 'next/link'
 import { getUserForms } from '@/app/actions/getUserForms'
@@ -12,17 +14,26 @@ type Props = {}
 const UpdgradeAccBtn = async (props: Props) => {
   const session = await auth();
   const userId = session?.user?.id;
+  
+  // Si no hay usuario autenticado, retornar null
   if (!userId) {
     return null;
   }
+
+  // Obtener información de suscripción del usuario
   const subscription = await getUserSubscription({ userId });
+  
+  // Si el usuario ya está suscrito, retornar null
   if (subscription) {
     return null;
   }
+  
+  // Obtener formularios del usuario
   const forms = await getUserForms();
   const formCount = forms.length;
   const percent = (formCount / MAX_FREE_FROMS) * 100;
 
+  // Renderizar contenido solo si el usuario no está suscrito
   return (
     <div className='p-4 mb-4 text-left text-xs'>
       <ProgressBar value={percent} />
