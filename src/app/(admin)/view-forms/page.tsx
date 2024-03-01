@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, useEffect } from 'react';
 import FormsList from '@/app/forms/FormsList';
 import { getUserForms } from '@/app/actions/getUserForms';
